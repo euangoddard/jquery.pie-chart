@@ -83,7 +83,7 @@
             // work out the total count for all data points:
             var total_count = 0;
             $.each(settings.data, function () {
-                if (!this.count || this.count <= 0) {
+                if (this.count==undefined || this.count < 0) {
                     throw "You must specify a count for each data point which is >=0";
                 }
                 total_count += this.count; 
